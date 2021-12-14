@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 interface ICategoryItemProps {
-    item: any;
+    item: {
+        id: number;
+        title: string;
+        img: string;
+    };
 }
 
 const CategoryItem: React.FC<ICategoryItemProps> = ({ item }) => {
