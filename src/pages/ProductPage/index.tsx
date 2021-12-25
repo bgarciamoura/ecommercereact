@@ -1,5 +1,5 @@
 import { Add, Remove } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Announcement from '../../components/Anouncement';
 import Footer from '../../components/Footer';

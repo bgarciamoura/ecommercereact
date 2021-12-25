@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './pages/Home';
-import ProductsPage from './pages/ProductsPage';
-import ProductPage from './pages/ProductPage';
+import RegisterPage from './pages/RegisterPage';
 
 ReactDOM.render(
     <React.StrictMode>
-        <ProductPage />
+        <RegisterPage />
     </React.StrictMode>,
     document.getElementById('root')
 );
