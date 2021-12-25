@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { categories } from '../../data';
+import { mobile } from '../../Globals/ResponsiveStyle';
 import CategoryItem from '../CategoryItem';
 
 const Categories: React.FC = () => {
@@ -18,6 +19,13 @@ const Container = styled.div`
     justify-content: space-between;
 
     padding: 20px;
+
+    ${mobile({
+        style: {
+            padding: '0',
+            flexDirection: 'column',
+        },
+    })}
 `;
 
 export default Categories;

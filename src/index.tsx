@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './pages/Home';
+import CartPage from './pages/CartPage';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Home />
+        <CartPage />
     </React.StrictMode>,
     document.getElementById('root')
 );

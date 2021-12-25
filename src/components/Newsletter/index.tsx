@@ -1,6 +1,7 @@
 import { Send } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 const Newsletter: React.FC = () => {
     return (
@@ -38,6 +39,12 @@ const Description = styled.div`
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 20px;
+
+    ${mobile({
+        style: {
+            textAlign: 'center',
+        },
+    })}
 `;
 
 const InputContainer = styled.div`
@@ -50,6 +57,12 @@ const InputContainer = styled.div`
     height: 40px;
 
     background-color: #fff;
+
+    ${mobile({
+        style: {
+            width: '70%',
+        },
+    })}
 `;
 
 const Input = styled.input`
@@ -68,6 +81,12 @@ const Button = styled.button`
     border: none;
     background-color: #008080;
     color: #fff;
+
+    ${mobile({
+        style: {
+            flex: '2',
+        },
+    })}
 `;
 
 export default Newsletter;

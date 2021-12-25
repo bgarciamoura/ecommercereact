@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 interface ICategoryItemProps {
     item: {
@@ -36,6 +37,12 @@ const Image = styled.img`
     height: 100%;
 
     object-fit: cover;
+
+    ${mobile({
+        style: {
+            height: '30vh',
+        },
+    })}
 `;
 
 const Info = styled.div`
