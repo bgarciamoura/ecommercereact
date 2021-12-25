@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import LoginPage from './pages/LoginPage';
+import CartPage from './pages/CartPage';
 
 ReactDOM.render(
     <React.StrictMode>
-        <LoginPage />
+        <CartPage />
     </React.StrictMode>,
     document.getElementById('root')
 );
