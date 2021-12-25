@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 const RegisterPage: React.FC = () => {
     return (
@@ -41,6 +42,13 @@ const RegisterContainer = styled.div`
     width: 40%;
     padding: 20px;
     background-color: white;
+
+    ${mobile({
+        style: {
+            width: '100%',
+            margin: '0 6px',
+        },
+    })}
 `;
 
 const Title = styled.h1`
@@ -72,6 +80,12 @@ const Button = styled.button`
     background-color: teal;
     color: white;
     cursor: pointer;
+
+    ${mobile({
+        style: {
+            width: '100%',
+        },
+    })}
 `;
 
 export default RegisterPage;

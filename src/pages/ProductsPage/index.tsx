@@ -5,6 +5,7 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import Newsletter from '../../components/Newsletter';
 import Products from '../../components/Products';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 const ProductsPage: React.FC = () => {
     return (
@@ -69,6 +70,14 @@ const FilterContainer = styled.div`
 
 const Filter = styled.div`
     margin: 20px;
+
+    ${mobile({
+        style: {
+            margin: '0 20px',
+            display: 'flex',
+            flexDirection: 'column',
+        },
+    })};
 `;
 
 const FilterText = styled.span`
@@ -87,6 +96,12 @@ const Select = styled.select`
 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #cfcfcf;
+
+    ${mobile({
+        style: {
+            margin: '4px 0',
+        },
+    })}
 `;
 
 const Option = styled.option``;

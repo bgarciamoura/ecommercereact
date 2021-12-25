@@ -5,6 +5,7 @@ import Announcement from '../../components/Anouncement';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import Newsletter from '../../components/Newsletter';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 interface IFilterColorProps {
     color: string;
@@ -83,6 +84,13 @@ const ProductContainer = styled.div`
     display: flex;
 
     padding: 50px;
+
+    ${mobile({
+        style: {
+            padding: '10px',
+            flexDirection: 'column',
+        },
+    })}
 `;
 
 const ProductImageContainer = styled.div`
@@ -94,12 +102,24 @@ const ProductImage = styled.img`
     height: 90vh;
 
     object-fit: cover;
+
+    ${mobile({
+        style: {
+            height: '40vh',
+        },
+    })}
 `;
 
 const ProductInfoContainer = styled.div`
     flex: 1;
 
     padding: 0 50px;
+
+    ${mobile({
+        style: {
+            padding: '0 10px',
+        },
+    })}
 `;
 
 const ProductTitle = styled.h2`
@@ -122,6 +142,12 @@ const FilterContainer = styled.div`
 
     display: flex;
     justify-content: space-between;
+
+    ${mobile({
+        style: {
+            width: '100%',
+        },
+    })}
 `;
 
 const Filter = styled.div`
@@ -166,6 +192,12 @@ const AddContainer = styled.div`
     justify-content: space-between;
 
     width: 50%;
+
+    ${mobile({
+        style: {
+            width: '100%',
+        },
+    })}
 `;
 
 const AmountContainer = styled.div`

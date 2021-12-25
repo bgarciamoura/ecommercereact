@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Announcement from '../../components/Anouncement';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 interface ITopButtonProps {
     borderType?: string;
@@ -112,6 +113,12 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
     padding: 20px;
+
+    ${mobile({
+        style: {
+            padding: '10px',
+        },
+    })}
 `;
 
 const Title = styled.h1`
@@ -135,7 +142,14 @@ const TopButton = styled.button<ITopButtonProps>`
     color: ${(props) => props.borderType === 'filled' && 'white'};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+    ${mobile({
+        style: {
+            display: 'none',
+        },
+    })}
+`;
+
 const TopText = styled.span`
     text-decoration: underline;
     cursor: pointer;
@@ -145,6 +159,12 @@ const TopText = styled.span`
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${mobile({
+        style: {
+            flexDirection: 'column',
+        },
+    })}
 `;
 
 const Info = styled.div`
@@ -154,6 +174,14 @@ const Info = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${mobile({
+        style: {
+            flexDirection: 'column',
+            marginBottom: '20px',
+            backgroundColor: '#f2f2f2',
+        },
+    })}
 `;
 
 const ProductDetail = styled.div`
@@ -191,12 +219,26 @@ const PriceDetail = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    ${mobile({
+        style: {
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+        },
+    })}
 `;
 
 const ProductAmountContainer = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
+    ${mobile({
+        style: {
+            justifyContent: 'center',
+            marginBottom: '0',
+        },
+    })}
 `;
 
 const ProductAmount = styled.div`

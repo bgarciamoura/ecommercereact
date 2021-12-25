@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 const LoginPage: React.FC = () => {
     return (
@@ -34,6 +35,13 @@ const LoginContainer = styled.div`
     width: 25%;
     padding: 20px;
     background-color: white;
+
+    ${mobile({
+        style: {
+            width: '100%',
+            margin: '0 6px',
+        },
+    })}
 `;
 
 const Title = styled.h1`
@@ -61,6 +69,12 @@ const Button = styled.button`
     color: white;
     cursor: pointer;
     margin-bottom: 10px;
+
+    ${mobile({
+        style: {
+            width: '100%',
+        },
+    })}
 `;
 
 const Link = styled.a`
@@ -68,6 +82,12 @@ const Link = styled.a`
     font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
+
+    ${mobile({
+        style: {
+            textAlign: 'center',
+        },
+    })}
 `;
 
 export default LoginPage;

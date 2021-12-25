@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, Phone, Pinterest, Room, Twitter } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../../Globals/ResponsiveStyle';
 
 interface ISocialIconProps {
     backgroundColor: string;
@@ -65,6 +66,13 @@ const Footer: React.FC = () => {
 
 const Container = styled.div`
     display: flex;
+
+    ${mobile({
+        style: {
+            flexWrap: 'wrap',
+            flexDirection: 'column',
+        },
+    })}
 `;
 
 const Left = styled.div`
@@ -104,6 +112,12 @@ const Center = styled.div`
     flex: 1;
 
     padding: 20px;
+
+    ${mobile({
+        style: {
+            display: 'none',
+        },
+    })}
 `;
 
 const Title = styled.h3`
@@ -130,6 +144,12 @@ const Right = styled.div`
     flex: 1;
 
     padding: 20px;
+
+    ${mobile({
+        style: {
+            backgroundColor: '#f3f3f3',
+        },
+    })}
 `;
 
 const ContactItem = styled.div`
