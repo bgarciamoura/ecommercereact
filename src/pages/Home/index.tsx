@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import Announcement from '../../components/Anouncement';
 import Categories from '../../components/Categories';
 import Footer from '../../components/Footer';

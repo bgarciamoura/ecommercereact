@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../../Globals/ResponsiveStyle';
 
@@ -7,17 +8,20 @@ interface ICategoryItemProps {
         id: number;
         title: string;
         img: string;
+        cat: string;
     };
 }
 
 const CategoryItem: React.FC<ICategoryItemProps> = ({ item }) => {
     return (
         <Container>
-            <Image src={item.img} />
-            <Info>
-                <Title>{item.title}</Title>
-                <Button>SHOP NOW</Button>
-            </Info>
+            <Link to={`/products/${item.cat}`}>
+                <Image src={item.img} />
+                <Info>
+                    <Title>{item.title}</Title>
+                    <Button>SHOP NOW</Button>
+                </Info>
+            </Link>
         </Container>
     );
 };

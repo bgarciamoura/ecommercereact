@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { mobile } from '../../Globals/ResponsiveStyle';
 import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     return (
@@ -15,7 +16,9 @@ const Navbar: React.FC = () => {
                     </SearchContainer>
                 </Left>
                 <Center>
-                    <Logo>2CODE</Logo>
+                    <Link to='/'>
+                        <Logo>2CODE</Logo>
+                    </Link>
                 </Center>
                 <Right>
                     <MenuItem>Register</MenuItem>
@@ -45,6 +48,11 @@ const Container = styled.nav`
             height: '50px',
         },
     })}
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
 `;
 
 const Wrapper = styled.div`

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import Announcement from '../../components/Anouncement';
 import Footer from '../../components/Footer';
@@ -7,7 +8,32 @@ import Newsletter from '../../components/Newsletter';
 import Products from '../../components/Products';
 import { mobile } from '../../Globals/ResponsiveStyle';
 
+interface IFilters {
+    color?: string;
+    size?: string;
+}
+
 const ProductsPage: React.FC = () => {
+    const location = useLocation();
+    const [category, setCategory] = useState('');
+    const [filters, setFilters] = useState<IFilters>();
+    const [sort, setSort] = useState('newest');
+
+    useEffect(() => {
+        const categoryPath = location.pathname.split('/')[2];
+        setCategory(categoryPath);
+    }, [location.pathname]);
+
+    const handleFiltersChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        const { name, value } = event.target;
+        setFilters({ ...filters, [name]: value });
+    };
+
+    const handleSortChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        const { value } = event.target;
+        setSort(value);
+    };
+
     return (
         <Container>
             <Announcement />
@@ -17,10 +43,8 @@ const ProductsPage: React.FC = () => {
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products</FilterText>
-                    <Select>
-                        <Option disabled selected>
-                            Color
-                        </Option>
+                    <Select name='color' onChange={handleFiltersChange}>
+                        <Option disabled>Color</Option>
                         <Option>White</Option>
                         <Option>Black</Option>
                         <Option>Red</Option>
@@ -28,10 +52,8 @@ const ProductsPage: React.FC = () => {
                         <Option>Yellow</Option>
                         <Option>Green</Option>
                     </Select>
-                    <Select>
-                        <Option disabled selected>
-                            Size
-                        </Option>
+                    <Select name='size' onChange={handleFiltersChange}>
+                        <Option disabled>Size</Option>
                         <Option>XS</Option>
                         <Option>S</Option>
                         <Option>M</Option>
@@ -42,15 +64,15 @@ const ProductsPage: React.FC = () => {
                 </Filter>
                 <Filter>
                     <FilterText>Sort Products</FilterText>
-                    <Select>
-                        <Option selected>Newest</Option>
-                        <Option>Price (asc)</Option>
-                        <Option>Price (desc)</Option>
+                    <Select name='sort' onChange={handleSortChange} defaultValue='newest'>
+                        <Option value='newest'>Newest</Option>
+                        <Option value='asc'>Price (asc)</Option>
+                        <Option value='desc'>Price (desc)</Option>
                     </Select>
                 </Filter>
             </FilterContainer>
 
-            <Products />
+            <Products category={category} filters={filters} sort={sort} />
             <Newsletter />
             <Footer />
         </Container>
